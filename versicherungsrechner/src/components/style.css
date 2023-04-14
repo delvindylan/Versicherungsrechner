@@ -1,0 +1,8 @@
+#outerpadding {
+    padding: 50px;
+}
+
+.schadendeckungsbrechnung {
+    display: flex;
+    justify-content: flex-end;
+}
