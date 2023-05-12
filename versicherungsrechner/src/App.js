@@ -9,6 +9,7 @@ function App() {
     <div className="App">
 
     <div className="bg-image">
+    
       <Navbar />
 
       <header className="App-header">
@@ -23,7 +24,9 @@ function App() {
         </Routes>
       </div>
 
-    </div>
+      </div>
+
+    
       
     </div>
   );

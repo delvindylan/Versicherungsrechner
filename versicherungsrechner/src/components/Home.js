@@ -1,6 +1,8 @@
 
+import { Link } from "react-router-dom";
 
 export default function Home () {
+
 
     return (
 
@@ -13,7 +15,10 @@ export default function Home () {
 
         </div>
 
+        <Link to="/calculator">
             <input className="startButton" type="button" value="Start"/>
+        </Link>
+
 
         </div>
 

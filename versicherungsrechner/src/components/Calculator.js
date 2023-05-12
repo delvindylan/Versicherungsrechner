@@ -9,7 +9,13 @@ export default function Calculator() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setSchadensdeckung(versicherungssumme/versicherungswert*schadenssumme)
+        let calculatedSchadensdeckung = versicherungssumme / versicherungswert * schadenssumme
+        let roundedSchadensdeckung = calculatedSchadensdeckung.toFixed(2)
+        setSchadensdeckung(roundedSchadensdeckung)
+        //let currencySchadensdeckung = `CHF ${schadensdeckung}`; noch bearbeiten!!!
+        if (versicherungssumme.length < 1 && versicherungswert.length < 1 && schadenssumme.length < 1) {
+            alert("Fill in the Values");
+          } 
     }
 
     function handleClear() {
@@ -25,10 +31,8 @@ export default function Calculator() {
 
             <h1 id="title">Insurance Calculator</h1>
 
-            <h3>Description</h3>
-
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
             
+
             <div className="form">
             <form onSubmit={ (e) => handleSubmit(e) }>
                 <table>
@@ -48,8 +52,8 @@ export default function Calculator() {
 
                         <div className="inputButtons">
                         <tr>
-                            <td><input className="input" type="submit" value="Submit"/></td>
-                            <td><input className="input" type="button" value="Clear" onClick={ handleClear }/></td>
+                            <td><input className="input" id="calculatorSubmit" type="submit" value="Calculate"/></td>
+                            <td><input className="input" id="calculatorClear" type="button" value="Clear" onClick={ handleClear }/></td>
                         </tr>
                         </div>
 
@@ -59,7 +63,7 @@ export default function Calculator() {
             </div>
 
             <h3>Schadensdeckung der Hausratsversicherung: </h3>
-            <h3>{schadensdeckung}</h3>
+            <h3> CHF {schadensdeckung}</h3>
 
         </div>
 
