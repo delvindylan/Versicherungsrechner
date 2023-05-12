@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    text-align: center;
+}
+
+.bg-image {
+    background-image: url("../images/background.png");
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    width: 100%;
+    background-clip: border-box;
+    background-color: transparent;
+    border: none;
+    /*filter: blur(8px) brightness(75%);*/
+    backdrop-filter: blur(8px) brightness(72%);
+    /*-webkit-backdrop-filter: blur(8px) brightness(75%);*/
+}
+
+.bg-image::before {
+    background-size: contain;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(8px) brightness(72%);
+}
+
+
+.container {
+    margin: 1rem;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 2rem;
+}
+
+.nav  {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    /*padding: 0 1.5rem;*/
+    padding-left: 5px;
+    opacity: 0.9;
+}
+
+.nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    /*gap: 2rem;*/
+}
+
+.nav a {
+    color: white;
+    font-size: 3.3rem;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.nav li.active {
+    background-color: #3b3b3b;
+}
+
+.nav li:hover {
+    background-color: #5f5f5f;
+}
+
+.homeTitle {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    display: block;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-shadow: 1px 1px 60px black;
+}
+
+@keyframes reveal {
+  0% {
+    transform: translate(0,100%);
+    filter: brightness(0%);
+  }
+  100% {
+    transform: translate(0,0);
+    filter: brightness(100%);
+  }
+}
+
+.startButton{
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 1;
+    display: block;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.3s;
+}
+
+.startButton:hover {
+    background-color:rgb(179, 179, 179);
+}
+
+.startButton:active {
+    background-color: rgb(108, 108, 108);
+}
+
+#title {
+    font-weight: bold;
+}
+
+.calculator {
+    color: white;
+    font-size: 23px;
+    padding-top: 50px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+
+.inputBoxes input {
+    /*border-radius: 6px;
+    font-size: 30px;
+    background-color:grey;
+    border: none;*/
+
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+
+}
+
+#versicherungssumme {
+    background-color: white;
+    background-image: url('../images/contract2.png');
+    background-size: 30px 30px;
+    background-position: 7px 5px; 
+    background-repeat: no-repeat;
+}
+
+#versicherungswert {
+    background-color: white;
+    background-image: url('../images/versicherungswert.png');
+    background-size: 30px 30px;
+    background-position: 7px 5px; 
+    background-repeat: no-repeat;   
+}
+
+#schadenssumme {
+    background-color: white;
+    background-image: url('../images/bandage.png');
+    background-size: 30px 30px;
+    background-position: 7px 5px; 
+    background-repeat: no-repeat; 
+}
+
+
+
+.inputBoxes input:focus {
+    width: 130%;
+}
+
+.inputBoxes td {
+    padding: 5px;
+}
+
+
+/*
+.inputBoxes input::placeholder {
+
+    color: black;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.inputBoxes input:focus::placeholder {
+  opacity: 1;
+}
+*/
+
+.inputButtons input {
+    display: block;
+    border: none;
+    /*padding: 15px 10px;*/
+    /*padding: 15px 32px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 23px;
+    border-radius: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.2s;
+}
+
+#calculatorSubmit {
+    padding: 15px 10px;
+}
+
+#calculatorClear {
+    padding: 15px 29px;
+}
+
+
+
+.inputButtons input:hover {
+    background-color:rgb(179, 179, 179);
+}
+
+.inputButtons input:active {
+    background-color: rgb(108, 108, 108);
+}
+
+
+.outerpadding {
+    margin-left: 200px;
+}
+.outerpadding-title {
+    margin-left: 200px;
+}
+
+.schadendeckungsbrechnung {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*
+.aboutText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contactForm {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  */
+
+.aboutText {
+    padding-left: 100px;
+}
+
+.aboutTitle {
+    color: white;
+    font-size: 3rem;
+}
+
+.aboutPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.aboutText {
+    font-size: 1.5rem;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+  
+  .contactForm {
+    text-align: right;
+    padding-left: 24.5rem;
+
+}
+
+.contactInput {
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+.contactInput:focus {
+    width: 130%;
+}
+
+.contactButton {
+    display: block;
+    border: none;
+    /*padding: 15px 10px;*/
+    /*padding: 15px 32px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 23px;
+    border-radius: 12px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.2s;
+}
+    
+#contactSubmit {
+    padding: 15px 20px;
+}
+
+#contactClear {
+    padding: 15px 30px;
+}
+    
+.contactButton:hover {
+    background-color:rgb(179, 179, 179);
+}
+
+.contactButton:active {
+    background-color: rgb(108, 108, 108);
+}
+
+.contactLabel {
+    font-size: 2.5rem;
+    color: white;
+    padding-right: 58px;
+ 
+}
+
+.aboutLabel {
+    font-size: 2.5rem;
+    color: white;
+    padding-left: 290px;
+}
+
